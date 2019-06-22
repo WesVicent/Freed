@@ -2,7 +2,7 @@
  * @Author: WesFerreira - https://github.com/WesFerreira
  * @Date: 2019-01-12 07:42:52
  * @Last Modified by: WesFerreira
- * @Last Modified time: 2019-01-12 18:05:01
+ * @Last Modified time: 2019-06-22 16:57:26
  */
 
 import { app, BrowserWindow, globalShortcut } from "electron";
@@ -20,6 +20,7 @@ function createWindow() {
         show: false,
     });
     win.maximize();
+    win.setFullScreen(true);
     win.setMenu(null);
 
     win.loadFile("./dist/index.html");

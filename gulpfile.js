@@ -38,7 +38,10 @@ var paths = {
     scss: {
         sourceSASS: './sass/**/*.scss'
     },
-    libs: []
+    libs: [
+        './node_modules/quill/dist/quill.js',
+        './node_modules/simplebar/dist/simplebar.js'
+    ]
 };
 
 /////////////////////////////////////////////////////////////////////////////////
@@ -95,7 +98,7 @@ gulp.task('bundle:sass', function () {
         .pipe(sass())
         .on("error", swallowError)
         .pipe(autoprefixer({
-            browsers: ['last 2 versions'],
+            overrideBrowserslist: ['last 2 versions'],
             cascade: false
         }))
         .pipe(gulp.dest(paths.dist))

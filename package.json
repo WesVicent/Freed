@@ -27,10 +27,13 @@
     "vinyl-source-stream": "^2.0.0"
   },
   "dependencies": {
+    "@types/quill": "^2.0.2",
     "gulp-autoprefixer": "^6.0.0",
     "gulp-cssnano": "^2.1.3",
     "gulp-sass": "^4.0.2",
     "inversify": "^5.0.1",
-    "reflect-metadata": "^0.1.12"
+    "quill": "^1.3.6",
+    "reflect-metadata": "^0.1.12",
+    "simplebar": "^4.0.0"
   }
 }

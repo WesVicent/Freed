@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
     "target": "es5",
-    "types": ["reflect-metadata"],
+    "types": ["reflect-metadata", "quill"],
     "lib": ["es6", "dom"],
     "sourceMap": true,
     "module": "commonjs",
@@ -10,6 +10,7 @@
     "jsx": "react",
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
+    "esModuleInterop": true,
     "declaration": false,
     "noImplicitAny": false,
     "removeComments": true,
