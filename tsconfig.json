@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
     "target": "es5",
-    "types": ["reflect-metadata", "quill"],
+    "types": ["reflect-metadata"],
     "lib": ["es6", "dom"],
     "sourceMap": true,
     "module": "commonjs",

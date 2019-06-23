@@ -1,11 +1,10 @@
 import Quill from "quill";
-import SimpleBar from "simplebar";
 
 /*
  * @Author: WesFerreira - https://github.com/WesFerreira
  * @Date: 2019-06-22 15:08:21
  * @Last Modified by: WesFerreira
- * @Last Modified time: 2019-06-22 18:44:49
+ * @Last Modified time: 2019-06-23 12:36:15
  */
 
  window.onload = () => {
@@ -34,4 +33,5 @@ import SimpleBar from "simplebar";
          placeholder: "Focus and write something great.",
          theme: "snow",
      });
+
  };

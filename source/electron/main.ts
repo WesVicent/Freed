@@ -5,7 +5,7 @@
  * @Last Modified time: 2019-06-22 16:57:26
  */
 
-import { app, BrowserWindow, globalShortcut } from "electron";
+import { app, BrowserWindow, globalShortcut, webFrame } from "electron";
 
 let win: BrowserWindow;
 // tslint:disable:object-literal-sort-keys
@@ -22,6 +22,8 @@ function createWindow() {
     win.maximize();
     win.setFullScreen(true);
     win.setMenu(null);
+
+    // webFrame.setSpellCheckProvider()
 
     win.loadFile("./dist/index.html");
 

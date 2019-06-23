@@ -39,8 +39,7 @@ var paths = {
         sourceSASS: './sass/**/*.scss'
     },
     libs: [
-        './node_modules/quill/dist/quill.js',
-        './node_modules/simplebar/dist/simplebar.js'
+        './node_modules/quill/dist/quill.js'
     ]
 };
 
