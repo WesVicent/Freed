@@ -2,10 +2,12 @@
  * @Author: WesFerreira - https://github.com/WesFerreira
  * @Date: 2019-01-12 07:42:52
  * @Last Modified by: WesFerreira
- * @Last Modified time: 2019-06-22 16:57:26
+ * @Last Modified time: 2019-06-24 17:06:12
  */
 
 import { app, BrowserWindow, globalShortcut, webFrame } from "electron";
+import { SpellCheckHandler, ContextMenuListener, ContextMenuBuilder } from "electron-spellchecker";
+import { SpellCheckProvider } from "electron-spell-check-provider";
 
 let win: BrowserWindow;
 // tslint:disable:object-literal-sort-keys
@@ -23,8 +25,6 @@ function createWindow() {
     win.setFullScreen(true);
     win.setMenu(null);
 
-    // webFrame.setSpellCheckProvider()
-
     win.loadFile("./dist/index.html");
 
     globalShortcut.register("f5", function () {
@@ -33,6 +33,7 @@ function createWindow() {
     globalShortcut.register("f1", function () {
         win.webContents.openDevTools();
     });
+
     ///////////////////////////////////////////
 
     win.on("closed", () => {
@@ -59,5 +60,6 @@ app.on("activate", () => {
     // dock icon is clicked and there are no other windows open.
     if (win === null) {
         createWindow();
+        webFrame.setSpellCheckProvider("en-US", true, new SpellCheckProvider("en-US"));
     }
 });

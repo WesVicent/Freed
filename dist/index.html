@@ -10,16 +10,22 @@
     <link rel="stylesheet" type="text/css" href="app.min.css">
 
     <!-- Libs -->
+    <script src="require.min.js"></script>
+    <script src="../node_modules/electron-spell-check-provider/src/index.js"></script>
     <script src="libs.min.js"></script>
 
     <!-- Electron -->
-    <script> window.ELECTRON_DISABLE_SECURITY_WARNINGS = true </script>
+    <script>
+    window.ELECTRON_DISABLE_SECURITY_WARNINGS = true;
 
+    </script>
 </head>
 
 <body class="custom" style="overflow: hidden">
-    <div id="editor-container" data-simplebar></div>
+    <div id="editor-container"></div>
+    <input type="text">
 </body>
+
 
 <!-- Core -->
 <script src="core.min.js"></script>
