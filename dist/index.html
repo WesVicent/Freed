@@ -10,8 +10,6 @@
     <link rel="stylesheet" type="text/css" href="app.min.css">
 
     <!-- Libs -->
-    <script src="require.min.js"></script>
-    <script src="../node_modules/electron-spell-check-provider/src/index.js"></script>
     <script src="libs.min.js"></script>
 
     <!-- Electron -->
@@ -22,8 +20,9 @@
 </head>
 
 <body class="custom" style="overflow: hidden">
-    <div id="editor-container"></div>
-    <input type="text">
+    <div contenteditable="true">
+      Type stuff here.
+    </div>
 </body>
 
 

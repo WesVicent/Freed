@@ -2,22 +2,24 @@
  * @Author: WesFerreira - https://github.com/WesFerreira
  * @Date: 2019-01-12 07:42:52
  * @Last Modified by: WesFerreira
- * @Last Modified time: 2019-06-24 17:06:12
+ * @Last Modified time: 2019-06-28 20:45:05
  */
 
-import { app, BrowserWindow, globalShortcut, webFrame } from "electron";
-import { SpellCheckHandler, ContextMenuListener, ContextMenuBuilder } from "electron-spellchecker";
-import { SpellCheckProvider } from "electron-spell-check-provider";
+import { app, BrowserWindow, globalShortcut } from "electron";
+import * as path from "path";
+
 
 let win: BrowserWindow;
 // tslint:disable:object-literal-sort-keys
 
 function createWindow() {
+
     ////////////////// SETUP //////////////////
     win = new BrowserWindow({
         webPreferences: {
-            nodeIntegration: false,
-            webSecurity: false,
+            nodeIntegration: true,
+            // webSecurity: false,
+            preload: path.join(__dirname, "/../../../dist/preload.js"),
         },
         show: false,
     });
@@ -26,6 +28,7 @@ function createWindow() {
     win.setMenu(null);
 
     win.loadFile("./dist/index.html");
+    // win.loadURL(`file://${__dirname}/../../../dist/index.html`);
 
     globalShortcut.register("f5", function () {
         win.reload();
@@ -44,7 +47,10 @@ function createWindow() {
     });
 }
 
-app.on("ready", createWindow);
+app.on("ready", () => {
+    createWindow();
+
+});
 
 // Quit when all windows are closed.
 app.on("window-all-closed", () => {
@@ -60,6 +66,5 @@ app.on("activate", () => {
     // dock icon is clicked and there are no other windows open.
     if (win === null) {
         createWindow();
-        webFrame.setSpellCheckProvider("en-US", true, new SpellCheckProvider("en-US"));
     }
 });
